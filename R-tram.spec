@@ -4,7 +4,7 @@
 #
 Name     : R-tram
 Version  : 0.8.1
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/tram_0.8-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tram_0.8-1.tar.gz
 Summary  : Transformation Models
@@ -26,9 +26,6 @@ BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : R-variables
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 implemented in package 'mlt'. Available models include Cox models, some parametric 
@@ -52,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678472178
+export SOURCE_DATE_EPOCH=1678827925
 
 %install
-export SOURCE_DATE_EPOCH=1678472178
+export SOURCE_DATE_EPOCH=1678827925
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
