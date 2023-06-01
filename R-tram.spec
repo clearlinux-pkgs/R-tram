@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-tram
-Version  : 0.8.2
-Release  : 13
-URL      : https://cran.r-project.org/src/contrib/tram_0.8-2.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/tram_0.8-2.tar.gz
+Version  : 0.8.3
+Release  : 14
+URL      : https://cran.r-project.org/src/contrib/tram_0.8-3.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/tram_0.8-3.tar.gz
 Summary  : Transformation Models
 Group    : Development/Tools
 License  : GPL-2.0
@@ -43,16 +43,19 @@ lib components for the R-tram package.
 
 %prep
 %setup -q -n tram
+pushd ..
+cp -a tram buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680052072
+export SOURCE_DATE_EPOCH=1685648677
 
 %install
-export SOURCE_DATE_EPOCH=1680052072
+export SOURCE_DATE_EPOCH=1685648677
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,6 +93,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -138,6 +142,8 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/tram/tests/Survreg-Ex.R
 /usr/lib64/R/library/tram/tests/Survreg-Ex.Rout.save
 /usr/lib64/R/library/tram/tests/bugfixes.R
+/usr/lib64/R/library/tram/tests/intercepts-Ex.R
+/usr/lib64/R/library/tram/tests/intercepts-Ex.Rout.save
 /usr/lib64/R/library/tram/tests/ltmatrices-Ex.R
 /usr/lib64/R/library/tram/tests/mmlt-Ex.R
 /usr/lib64/R/library/tram/tests/stram-Ex.R
