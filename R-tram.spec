@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-tram
-Version  : 0.8.3
-Release  : 15
-URL      : https://cran.r-project.org/src/contrib/tram_0.8-3.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/tram_0.8-3.tar.gz
+Version  : 1.0.0
+Release  : 16
+URL      : https://cran.r-project.org/src/contrib/tram_1.0-0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/tram_1.0-0.tar.gz
 Summary  : Transformation Models
 Group    : Development/Tools
 License  : GPL-2.0
@@ -52,10 +52,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685648677
+export SOURCE_DATE_EPOCH=1693257341
 
 %install
-export SOURCE_DATE_EPOCH=1685648677
+export SOURCE_DATE_EPOCH=1693257341
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -136,6 +136,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/tram/simulations/sim5d.R
 /usr/lib64/R/library/tram/tests/Coxph-Ex.R
 /usr/lib64/R/library/tram/tests/Coxph-Ex.Rout.save
+/usr/lib64/R/library/tram/tests/KaplanMeier-Ex.R
 /usr/lib64/R/library/tram/tests/PI_OVL-Ex.R
 /usr/lib64/R/library/tram/tests/Polr-Ex.R
 /usr/lib64/R/library/tram/tests/Polr-Ex.Rout.save
@@ -144,8 +145,9 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/tram/tests/bugfixes.R
 /usr/lib64/R/library/tram/tests/intercepts-Ex.R
 /usr/lib64/R/library/tram/tests/intercepts-Ex.Rout.save
-/usr/lib64/R/library/tram/tests/ltmatrices-Ex.R
 /usr/lib64/R/library/tram/tests/mmlt-Ex.R
+/usr/lib64/R/library/tram/tests/mmlt-Ex.Rout.save
+/usr/lib64/R/library/tram/tests/mmlt_ll_sc.R
 /usr/lib64/R/library/tram/tests/stram-Ex.R
 /usr/lib64/R/library/tram/tests/stram-Ex.Rout.save
 /usr/lib64/R/library/tram/undernutrition.RData
