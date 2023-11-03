@@ -5,7 +5,7 @@
 #
 Name     : R-tram
 Version  : 1.0.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/tram_1.0-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tram_1.0-0.tar.gz
 Summary  : Transformation Models
