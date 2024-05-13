@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : R-tram
-Version  : 1.0.3
-Release  : 21
-URL      : https://cran.r-project.org/src/contrib/tram_1.0-3.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/tram_1.0-3.tar.gz
+Version  : 1.0.4
+Release  : 22
+URL      : https://cran.r-project.org/src/contrib/tram_1.0-4.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/tram_1.0-4.tar.gz
 Summary  : Transformation Models
 Group    : Development/Tools
 License  : GPL-2.0
@@ -23,8 +23,6 @@ Requires: R-sandwich
 Requires: R-variables
 BuildRequires : R-Formula
 BuildRequires : R-basefun
-BuildRequires : R-colorspace
-BuildRequires : R-mlbench
 BuildRequires : R-mlt
 BuildRequires : R-multcomp
 BuildRequires : R-mvtnorm
@@ -59,10 +57,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713372598
+export SOURCE_DATE_EPOCH=1715630589
 
 %install
-export SOURCE_DATE_EPOCH=1713372598
+export SOURCE_DATE_EPOCH=1715630589
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
